@@ -54,30 +54,30 @@ export enum ChannelType {
  * https://discord.com/developers/docs/resources/channel#message-object-message-structure
  */
 export interface APIMessage {
-	id: string;
-	channel_id: string;
-	guild_id?: string;
-	author: APIUser;
-	member?: APIGuildMember;
-	content: string;
-	timestamp: string;
-	edited_timestamp: string | null;
-	tts: boolean;
-	mention_everyone: boolean;
-	mentions: (APIUser & { member?: Omit<APIGuildMember, 'user'> })[];
-	mention_roles: string[];
-	mention_channels?: APIChannelMention[];
-	attachments: APIAttachment[];
-	embeds: APIEmbed[];
-	reactions?: APIReaction[];
-	nonce?: string | number;
-	pinned: boolean;
-	webhook_id?: string;
-	type: MessageType;
-	activity?: APIMessageActivity;
-	application?: APIMessageApplication;
-	message_reference?: APIMessageReference;
-	flags?: MessageFlags;
+  id: string;
+  channel_id: string;
+  guild_id?: string;
+  author: APIUser;
+  member?: APIGuildMember;
+  content: string;
+  timestamp: string;
+  edited_timestamp: string | null;
+  tts: boolean;
+  mention_everyone: boolean;
+  mentions: (APIUser & { member?: Omit<APIGuildMember, "user"> })[];
+  mention_roles: string[];
+  mention_channels?: APIChannelMention[];
+  attachments: APIAttachment[];
+  embeds: APIEmbed[];
+  reactions?: APIReaction[];
+  nonce?: string | number;
+  pinned: boolean;
+  webhook_id?: string;
+  type: MessageType;
+  activity?: APIMessageActivity;
+  application?: APIMessageApplication;
+  message_reference?: APIMessageReference;
+  flags?: MessageFlags;
 }
 
 /**

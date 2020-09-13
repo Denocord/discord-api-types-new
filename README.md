@@ -7,15 +7,24 @@
 
 Simple type definitions for the [Discord API](https://discord.com/developers/docs/intro).
 
-## Installation
+## Usage
 
-Install with [npm](https://www.npmjs.com/) / [yarn](https://yarnpkg.com) / [pnpm](https://pnpm.js.org/):
+You can `import` the default version directly, which will give you the latest types as of the current API version. This will be updated according to Discord's default API version; this means it may break at any point in time.
 
-```sh
-npm install discord-api-types
-yarn add discord-api-types
-pnpm add discord-api-types
+> We **strongly recommend** you use a version when importing this module! This will prevent breaking changes when updating the module.
+
+```ts
+// TypeScript/ES Module support
+import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/default/index.ts';
 ```
+
+You should instead consider adding the API version you want to target by appending `/v*`, where the `*` represents the API version.
+
+```ts
+// TypeScript/ES Module support
+import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v6/index.ts';
+```
+
 
 ## Project Structure
 
@@ -41,28 +50,3 @@ The exports of each API version is split into three main parts:
 
 **Warning**: This package documents just KNOWN (and documented) properties. Anything that isn't documented will NOT be added to this package (unless said properties are in an open Pull Request to Discord's [API Documentation repository](https://github.com/discord/discord-api-docs) or known through other means *and have received the green light to be used*). For clarification's sake, this means that properties that are only known through the process of datamining and have not yet been confirmed in a way as described will NOT be included.
 
-## Usage
-
-You can `require` / `import` the module directly, which will give you the latest types as of the current API version. This is considered the `default` version and will be updated according to Discord's default API version; this means it may break at any point in time.
-
-> We **strongly recommend** you use a version when importing this module! This will prevent breaking changes when updating the module.
-
-```js
-const { APIUserData } = require('discord-api-types');
-```
-
-```ts
-// TypeScript/ES Module support
-import { APIUserData } from 'discord-api-types';
-```
-
-You should instead consider adding the API version you want to target by appending `/v*`, where the `*` represents the API version.
-
-```js
-const { APIUserData } = require('discord-api-types/v6');
-```
-
-```ts
-// TypeScript/ES Module support
-import { APIUserData } from 'discord-api-types/v6';
-```

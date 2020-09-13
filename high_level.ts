@@ -2,7 +2,7 @@
  * Higher-level Discord API abstractions for Denocord
  */
 
-import * as lowLevel from "./v6/index.ts";
+import type * as lowLevel from "./v6/index.ts";
 
 export const DATA_SYMBOL = Symbol("Denocord::Data");
 export enum DataTypes {

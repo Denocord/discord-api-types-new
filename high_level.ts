@@ -25,7 +25,10 @@ export interface SnowflakeBase {
 type HighLevelWrap<O, N> = Omit<O, keyof N> & N;
 type PickOptionalType<T, P extends keyof T> = Required<Pick<T, P>>[P];
 
-type GuildVoiceState = PickOptionalType<lowLevel.APIGuild, "voice_states">[number];
+type GuildVoiceState = PickOptionalType<
+  lowLevel.APIGuild,
+  "voice_states"
+>[number];
 
 export type Guild = HighLevelWrap<lowLevel.APIGuild, {
   roles: Map<string, Role>;

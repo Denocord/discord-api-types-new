@@ -2,7 +2,7 @@
  * Types extracted from https://discord.com/developers/docs/resources/emoji
  */
 
-import type { APIUser } from './user';
+import type { APIUser } from './user.ts';
 
 /**
  * Not documented but mentioned

@@ -2,7 +2,7 @@
  * Types extracted from https://discord.com/developers/docs/topics/teams
  */
 
-import type { APIUser } from './user';
+import type { APIUser } from './user.ts';
 
 /**
  * https://discord.com/developers/docs/topics/teams#data-models-team-object

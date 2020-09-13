@@ -2,7 +2,7 @@
  * Types extracted from https://discord.com/developers/docs/resources/user
  */
 
-import type { APIGuildIntegration } from './guild';
+import type { APIGuildIntegration } from './guild.ts';
 
 /**
  * https://discord.com/developers/docs/resources/user#user-object

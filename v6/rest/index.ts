@@ -1,13 +1,13 @@
-export * from './auditLog';
-export * from './channel';
-export * from './emoji';
-export * from './gateway';
-export * from './guild';
-export * from './invite';
-export * from './oauth2';
-export * from './user';
-export * from './voice';
-export * from './webhook';
+export * from './auditLog.ts';
+export * from './channel.ts';
+export * from './emoji.ts';
+export * from './gateway.ts';
+export * from './guild.ts';
+export * from './invite.ts';
+export * from './oauth2.ts';
+export * from './user.ts';
+export * from './voice.ts';
+export * from './webhook.ts';
 
 export const APIVersion = '6';
 export const Routes = {

@@ -2,8 +2,8 @@
  * Types extracted from https://discord.com/developers/docs/topics/oauth2
  */
 
-import type { APITeam } from './teams';
-import type { APIUser } from './user';
+import type { APITeam } from './teams.ts';
+import type { APIUser } from './user.ts';
 
 /**
  * https://discord.com/developers/docs/topics/oauth2#get-current-application-information-response-structure

@@ -2,8 +2,8 @@
  * Types extracted from https://discord.com/developers/docs/topics/gateway
  */
 
-import type { APIEmoji } from './emoji';
-import type { APIUser } from './user';
+import type { APIEmoji } from './emoji.ts';
+import type { APIUser } from './user.ts';
 
 /**
  * https://discord.com/developers/docs/topics/gateway#get-gateway

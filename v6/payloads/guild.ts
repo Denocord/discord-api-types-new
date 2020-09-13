@@ -2,12 +2,12 @@
  * Types extracted from https://discord.com/developers/docs/resources/guild
  */
 
-import type { APIChannel } from './channel';
-import type { APIEmoji } from './emoji';
-import type { GatewayPresenceUpdate } from './gateway';
-import type { APIRole } from './permissions';
-import type { APIUser } from './user';
-import type { GatewayVoiceState } from './voice';
+import type { APIChannel } from './channel.ts';
+import type { APIEmoji } from './emoji.ts';
+import type { GatewayPresenceUpdate } from './gateway.ts';
+import type { APIRole } from './permissions.ts';
+import type { APIUser } from './user.ts';
+import type { GatewayVoiceState } from './voice.ts';
 
 /**
  * https://discord.com/developers/docs/resources/guild#unavailable-guild-object

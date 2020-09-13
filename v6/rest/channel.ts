@@ -10,7 +10,7 @@ import type {
 	InviteTargetUserType,
 	MessageFlags,
 	OverwriteType,
-} from '../payloads';
+} from '../payloads/index.ts';
 
 // #region TypeDefs
 

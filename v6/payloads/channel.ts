@@ -2,9 +2,9 @@
  * Types extracted from https://discord.com/developers/docs/resources/channel
  */
 
-import type { APIPartialEmoji } from './emoji';
-import type { APIGuildMember } from './guild';
-import type { APIUser } from './user';
+import type { APIPartialEmoji } from './emoji.ts';
+import type { APIGuildMember } from './guild.ts';
+import type { APIUser } from './user.ts';
 
 /**
  * Not documented, but partial only includes id, name, and type

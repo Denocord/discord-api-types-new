@@ -2,7 +2,7 @@
  * Types extracted from https://discord.com/developers/docs/resources/audit-log
  */
 
-import type { APIOverwrite, ChannelType } from './channel';
+import type { APIOverwrite, ChannelType } from './channel.ts';
 import type {
 	APIGuildIntegration,
 	GuildDefaultMessageNotifications,
@@ -10,10 +10,10 @@ import type {
 	GuildMFALevel,
 	GuildVerificationLevel,
 	IntegrationExpireBehavior,
-} from './guild';
-import type { APIRole } from './permissions';
-import type { APIUser } from './user';
-import type { APIWebhook } from './webhook';
+} from './guild.ts';
+import type { APIRole } from './permissions.ts';
+import type { APIUser } from './user.ts';
+import type { APIWebhook } from './webhook.ts';
 
 /**
  * https://discord.com/developers/docs/resources/audit-log#audit-log-object-audit-log-structure

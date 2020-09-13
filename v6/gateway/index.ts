@@ -16,7 +16,7 @@ import type {
 	GatewayVoiceState,
 	InviteTargetUserType,
 	PresenceUpdateStatus,
-} from '../payloads';
+} from '../payloads/index.ts';
 
 export const GatewayVersion = '6';
 

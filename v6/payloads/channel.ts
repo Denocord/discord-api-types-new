@@ -2,9 +2,9 @@
  * Types extracted from https://discord.com/developers/docs/resources/channel
  */
 
-import type { APIPartialEmoji } from './emoji.ts';
-import type { APIGuildMember } from './guild.ts';
-import type { APIUser } from './user.ts';
+import type { APIPartialEmoji } from "./emoji.ts";
+import type { APIGuildMember } from "./guild.ts";
+import type { APIUser } from "./user.ts";
 
 /**
  * Not documented, but partial only includes id, name, and type
@@ -180,8 +180,8 @@ export interface APIOverwrite {
 }
 
 export enum OverwriteType {
-	Member = 'member',
-	Role = 'role',
+  Member = "member",
+  Role = "role",
 }
 
 /**
@@ -211,12 +211,12 @@ export interface APIEmbed {
  * @deprecated *Embed types should be considered deprecated and might be removed in a future API version*
  */
 export enum EmbedType {
-	Rich = 'rich',
-	Image = 'image',
-	Video = 'video',
-	GifV = 'gifv',
-	Article = 'article',
-	Link = 'link',
+  Rich = "rich",
+  Image = "image",
+  Video = "video",
+  GifV = "gifv",
+  Article = "article",
+  Link = "link",
 }
 
 /**

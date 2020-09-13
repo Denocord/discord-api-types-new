@@ -92,12 +92,12 @@ export interface RESTPostAPIChannelMessageJSONBody {
 export type RESTPostAPIChannelMessageFormDataBody =
   | {
     /**
-			 * JSON stringified message body
-			 */
+     * JSON stringified message body
+     */
     payload_json?: string;
     /**
-			 * The file contents
-			 */
+     * The file contents
+     */
     file: unknown;
   }
   | {
@@ -107,8 +107,8 @@ export type RESTPostAPIChannelMessageFormDataBody =
     embed?: APIEmbed;
     allowed_mentions?: APIAllowedMentionsSend;
     /**
-			 * The file contents
-			 */
+     * The file contents
+     */
     file: unknown;
   };
 

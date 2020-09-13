@@ -1,42 +1,30 @@
-name: Code Quality
+name: Code Quality - TypeScript
 
 on:
   push:
     branches:
       - master
-      - main
-      - stable
   pull_request:
 
 jobs:
-  ESLint:
-    name: ESLint
+  formatting:
+    name: Formatting
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 14
-      uses: actions/setup-node@v1
+    - name: Check project formatting
+      uses: Denocord/deno-action@master
       with:
-        node-version: 14
-    - name: Install Dependencies
-      run: npm ci
-    - name: Run ESLint
-      uses: icrawl/action-eslint@v1
-      with:
-        custom-glob: '{v*,default,common}/**'
+        args: '["fmt", "--check"]'
 
-  TypeScript:
-    name: TypeScript
+  lint:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 14
-      uses: actions/setup-node@v1
+    - name: Check project formatting
+      uses: Denocord/deno-action@master
       with:
-        node-version: 14
-    - name: Install Dependencies
-      run: npm ci
-    - name: Run TSC
-      uses: icrawl/action-tsc@v1
+        args: '["lint", "--unstable"]'

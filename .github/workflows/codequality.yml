@@ -27,4 +27,4 @@ jobs:
     - name: Check project formatting
       uses: Denocord/deno-action@master
       with:
-        args: '["lint", "--unstable"]'
+        args: '["deno", "lint", "--unstable"]'

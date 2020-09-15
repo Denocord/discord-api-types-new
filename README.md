@@ -14,14 +14,12 @@ You can `import` the default version directly, which will give you the latest ty
 > We **strongly recommend** you use a version when importing this module! This will prevent breaking changes when updating the module.
 
 ```ts
-// TypeScript/ES Module support
 import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/default/index.ts';
 ```
 
 You should instead consider adding the API version you want to target by appending `/v*`, where the `*` represents the API version.
 
 ```ts
-// TypeScript/ES Module support
 import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v6/index.ts';
 ```
 

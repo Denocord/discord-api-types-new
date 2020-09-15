@@ -1,0 +1,7 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Create an issue on the upstream
+    url: https://github.com/discordjs/discord-api-types/issues/new/choose
+  - name: Create an issue on the main repository
+    url: https://github.com/Denocord/Denocord/issues/new/choose
+    about: In case you have an issue with Denocord itself, please submit your issue there.

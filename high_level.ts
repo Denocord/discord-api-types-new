@@ -81,6 +81,10 @@ export type Invite = HighLevelWrap<lowLevel.APIInvite, {
   [DATA_SYMBOL]: DataTypes.INVITE;
 }>;
 
+export interface Ban extends lowLevel.APIBan {
+  user: User;
+}
+
 export type MessageMention = User & { member?: Omit<GuildMember, "user"> };
 export interface MessageCreatePayload
   extends lowLevel.RESTPostAPIChannelMessageJSONBody {

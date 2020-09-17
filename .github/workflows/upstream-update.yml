@@ -16,6 +16,7 @@ jobs:
         CURRENT_REPO: https://a:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         UPSTREAM_REPO: https://github.com/discordjs/discord-api-types.git
         UPDATE_BRANCH: main
+        PR_BRANCH: master
         OUTPUT_BRANCH: upstream-work
         UPDATE_METHOD: rebase
         KAMION_OUTPUT: github

@@ -13,7 +13,7 @@ jobs:
     - name: Sync the repositories using Kamion
       run: curl -fsSL https://raw.githubusercontent.com/Denocord/kamion/master/src/init.sh | bash
       env:
-        CURRENT_REPO: https://a@github.com/${{ github.repository }}.git
+        CURRENT_REPO: https://a:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         UPSTREAM_REPO: https://github.com/discordjs/discord-api-types.git
         UPDATE_BRANCH: main
         OUTPUT_BRANCH: upstream-work

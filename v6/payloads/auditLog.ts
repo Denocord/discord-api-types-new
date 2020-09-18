@@ -163,326 +163,420 @@ export enum AuditLogOptionsType {
  * https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-structure
  */
 export type APIAuditLogChange =
-	| APIAuditLogChangeKeyName
-	| APIAuditLogChangeKeyIconHash
-	| APIAuditLogChangeKeySplashHash
-	| APIAuditLogChangeKeyOwnerID
-	| APIAuditLogChangeKeyRegion
-	| APIAuditLogChangeKeyAFKChannelID
-	| APIAuditLogChangeKeyAFKTimeout
-	| APIAuditLogChangeKeyMFALevel
-	| APIAuditLogChangeKeyVerificationLevel
-	| APIAuditLogChangeKeyExplicitContentFilter
-	| APIAuditLogChangeKeyDefaultMessageNotifications
-	| APIAuditLogChangeKeyVanityURLCode
-	| APIAuditLogChangeKey$Add
-	| APIAuditLogChangeKey$Remove
-	| APIAuditLogChangeKeyPruneDeleteDays
-	| APIAuditLogChangeKeyWidgetEnabled
-	| APIAuditLogChangeKeyWidgetChannelID
-	| APIAuditLogChangeKeySystemChannelID
-	| APIAuditLogChangeKeyPosition
-	| APIAuditLogChangeKeyTopic
-	| APIAuditLogChangeKeyBitrate
-	| APIAuditLogChangeKeyPermissionOverwrites
-	| APIAuditLogChangeKeyNSFW
-	| APIAuditLogChangeKeyApplicationID
-	| APIAuditLogChangeKeyRateLimitPerUser
-	| APIAuditLogChangeKeyPermissions
-	| APIAuditLogChangeKeyPermissionsNew
-	| APIAuditLogChangeKeyColor
-	| APIAuditLogChangeKeyHoist
-	| APIAuditLogChangeKeyMentionable
-	| APIAuditLogChangeKeyAllow
-	| APIAuditLogChangeKeyAllowNew
-	| APIAuditLogChangeKeyDeny
-	| APIAuditLogChangeKeyDenyNew
-	| APIAuditLogChangeKeyCode
-	| APIAuditLogChangeKeyChannelID
-	| APIAuditLogChangeKeyInviterID
-	| APIAuditLogChangeKeyMaxUses
-	| APIAuditLogChangeKeyUses
-	| APIAuditLogChangeKeyMaxAge
-	| APIAuditLogChangeKeyTemporary
-	| APIAuditLogChangeKeyDeaf
-	| APIAuditLogChangeKeyMute
-	| APIAuditLogChangeKeyNick
-	| APIAuditLogChangeKeyAvatarHash
-	| APIAuditLogChangeKeyID
-	| APIAuditLogChangeKeyType
-	| APIAuditLogChangeKeyEnableEmoticons
-	| APIAuditLogChangeKeyExpireBehavior
-	| APIAuditLogChangeKeyExpireGracePeriod;
+  | APIAuditLogChangeKeyName
+  | APIAuditLogChangeKeyIconHash
+  | APIAuditLogChangeKeySplashHash
+  | APIAuditLogChangeKeyOwnerID
+  | APIAuditLogChangeKeyRegion
+  | APIAuditLogChangeKeyAFKChannelID
+  | APIAuditLogChangeKeyAFKTimeout
+  | APIAuditLogChangeKeyMFALevel
+  | APIAuditLogChangeKeyVerificationLevel
+  | APIAuditLogChangeKeyExplicitContentFilter
+  | APIAuditLogChangeKeyDefaultMessageNotifications
+  | APIAuditLogChangeKeyVanityURLCode
+  | APIAuditLogChangeKey$Add
+  | APIAuditLogChangeKey$Remove
+  | APIAuditLogChangeKeyPruneDeleteDays
+  | APIAuditLogChangeKeyWidgetEnabled
+  | APIAuditLogChangeKeyWidgetChannelID
+  | APIAuditLogChangeKeySystemChannelID
+  | APIAuditLogChangeKeyPosition
+  | APIAuditLogChangeKeyTopic
+  | APIAuditLogChangeKeyBitrate
+  | APIAuditLogChangeKeyPermissionOverwrites
+  | APIAuditLogChangeKeyNSFW
+  | APIAuditLogChangeKeyApplicationID
+  | APIAuditLogChangeKeyRateLimitPerUser
+  | APIAuditLogChangeKeyPermissions
+  | APIAuditLogChangeKeyPermissionsNew
+  | APIAuditLogChangeKeyColor
+  | APIAuditLogChangeKeyHoist
+  | APIAuditLogChangeKeyMentionable
+  | APIAuditLogChangeKeyAllow
+  | APIAuditLogChangeKeyAllowNew
+  | APIAuditLogChangeKeyDeny
+  | APIAuditLogChangeKeyDenyNew
+  | APIAuditLogChangeKeyCode
+  | APIAuditLogChangeKeyChannelID
+  | APIAuditLogChangeKeyInviterID
+  | APIAuditLogChangeKeyMaxUses
+  | APIAuditLogChangeKeyUses
+  | APIAuditLogChangeKeyMaxAge
+  | APIAuditLogChangeKeyTemporary
+  | APIAuditLogChangeKeyDeaf
+  | APIAuditLogChangeKeyMute
+  | APIAuditLogChangeKeyNick
+  | APIAuditLogChangeKeyAvatarHash
+  | APIAuditLogChangeKeyID
+  | APIAuditLogChangeKeyType
+  | APIAuditLogChangeKeyEnableEmoticons
+  | APIAuditLogChangeKeyExpireBehavior
+  | APIAuditLogChangeKeyExpireGracePeriod;
 
 /**
  * Returned when a guild's name is changed
 	 */
-export type APIAuditLogChangeKeyName = AuditLogChangeData<'name', string>;
+export type APIAuditLogChangeKeyName = AuditLogChangeData<"name", string>;
 
-  /**
+/**
  * Returned when a guild's icon is changed
 	 */
-export type APIAuditLogChangeKeyIconHash = AuditLogChangeData<'icon_hash', string>;
+export type APIAuditLogChangeKeyIconHash = AuditLogChangeData<
+  "icon_hash",
+  string
+>;
 
-  /**
+/**
  * Returned when a guild's splash is changed
 	 */
-export type APIAuditLogChangeKeySplashHash = AuditLogChangeData<'splash_hash', string>;
+export type APIAuditLogChangeKeySplashHash = AuditLogChangeData<
+  "splash_hash",
+  string
+>;
 
-  /**
+/**
  * Returned when a guild's owner ID is changed
 	 */
-export type APIAuditLogChangeKeyOwnerID = AuditLogChangeData<'owner_id', string>;
+export type APIAuditLogChangeKeyOwnerID = AuditLogChangeData<
+  "owner_id",
+  string
+>;
 
-  /**
+/**
  * Returned when a guild's region is changed
 	 */
-export type APIAuditLogChangeKeyRegion = AuditLogChangeData<'region', string>;
+export type APIAuditLogChangeKeyRegion = AuditLogChangeData<"region", string>;
 
-  /**
+/**
  * Returned when a guild's afk_channel_id is changed
 	 */
-export type APIAuditLogChangeKeyAFKChannelID = AuditLogChangeData<'afk_channel_id', string>;
+export type APIAuditLogChangeKeyAFKChannelID = AuditLogChangeData<
+  "afk_channel_id",
+  string
+>;
 
-  /**
+/**
  * Returned when a guild's afk_timeout is changed
 	 */
-export type APIAuditLogChangeKeyAFKTimeout = AuditLogChangeData<'afk_timeout', number>;
+export type APIAuditLogChangeKeyAFKTimeout = AuditLogChangeData<
+  "afk_timeout",
+  number
+>;
 
-  /**
+/**
  * Returned when a guild's mfa_level is changed
 	 */
-export type APIAuditLogChangeKeyMFALevel = AuditLogChangeData<'mfa_level', GuildMFALevel>;
+export type APIAuditLogChangeKeyMFALevel = AuditLogChangeData<
+  "mfa_level",
+  GuildMFALevel
+>;
 
-  /**
+/**
  * Returned when a guild's verification_level is changed
 	 */
-export type APIAuditLogChangeKeyVerificationLevel = AuditLogChangeData<'verification_level', GuildVerificationLevel>;
+export type APIAuditLogChangeKeyVerificationLevel = AuditLogChangeData<
+  "verification_level",
+  GuildVerificationLevel
+>;
 
-  /**
+/**
  * Returned when a guild's explicit_content_filter is changed
 	 */
 export type APIAuditLogChangeKeyExplicitContentFilter = AuditLogChangeData<
-	'explicit_content_filter',
-	GuildExplicitContentFilter
+  "explicit_content_filter",
+  GuildExplicitContentFilter
 >;
 
-  /**
+/**
  * Returned when a guild's default_message_notifications is changed
 	 */
-export type APIAuditLogChangeKeyDefaultMessageNotifications = AuditLogChangeData<
-	'default_message_notifications',
-	GuildDefaultMessageNotifications
->;
+export type APIAuditLogChangeKeyDefaultMessageNotifications =
+  AuditLogChangeData<
+    "default_message_notifications",
+    GuildDefaultMessageNotifications
+  >;
 
-  /**
+/**
  * Returned when a guild's vanity_url_code is changed
 	 */
-export type APIAuditLogChangeKeyVanityURLCode = AuditLogChangeData<'vanity_url_code', string>;
+export type APIAuditLogChangeKeyVanityURLCode = AuditLogChangeData<
+  "vanity_url_code",
+  string
+>;
 
-  /**
+/**
  * Returned when new role(s) are added
 	 */
-export type APIAuditLogChangeKey$Add = AuditLogChangeData<'$add', APIRole[]>;
+export type APIAuditLogChangeKey$Add = AuditLogChangeData<"$add", APIRole[]>;
 
-  /**
+/**
  * Returned when role(s) are removed
 	 */
-export type APIAuditLogChangeKey$Remove = AuditLogChangeData<'$remove', APIRole[]>;
+export type APIAuditLogChangeKey$Remove = AuditLogChangeData<
+  "$remove",
+  APIRole[]
+>;
 
-  /**
+/**
  * Returned when there is a change in number of days after which inactive and role-unassigned members are kicked
 	 */
-export type APIAuditLogChangeKeyPruneDeleteDays = AuditLogChangeData<'prune_delete_days', number>;
+export type APIAuditLogChangeKeyPruneDeleteDays = AuditLogChangeData<
+  "prune_delete_days",
+  number
+>;
 
-  /**
+/**
  * Returned when a guild's widget is enabled
 	 */
-export type APIAuditLogChangeKeyWidgetEnabled = AuditLogChangeData<'widget_enabled', boolean>;
+export type APIAuditLogChangeKeyWidgetEnabled = AuditLogChangeData<
+  "widget_enabled",
+  boolean
+>;
 
-  /**
+/**
  * Returned when a guild's widget_channel_id is changed
 	 */
-export type APIAuditLogChangeKeyWidgetChannelID = AuditLogChangeData<'widget_channel_id', string>;
+export type APIAuditLogChangeKeyWidgetChannelID = AuditLogChangeData<
+  "widget_channel_id",
+  string
+>;
 
-  /**
+/**
  * Returned when a guild's system_channel_id is changed
 	 */
-export type APIAuditLogChangeKeySystemChannelID = AuditLogChangeData<'system_channel_id', string>;
+export type APIAuditLogChangeKeySystemChannelID = AuditLogChangeData<
+  "system_channel_id",
+  string
+>;
 
-  /**
+/**
  * Returned when a channel's position is changed
 	 */
-export type APIAuditLogChangeKeyPosition = AuditLogChangeData<'position', number>;
+export type APIAuditLogChangeKeyPosition = AuditLogChangeData<
+  "position",
+  number
+>;
 
-  /**
+/**
  * Returned when a channel's topic is changed
 	 */
-export type APIAuditLogChangeKeyTopic = AuditLogChangeData<'topic', string>;
+export type APIAuditLogChangeKeyTopic = AuditLogChangeData<"topic", string>;
 
-  /**
+/**
  * Returned when a voice channel's bitrate is changed
 	 */
-export type APIAuditLogChangeKeyBitrate = AuditLogChangeData<'bitrate', number>;
+export type APIAuditLogChangeKeyBitrate = AuditLogChangeData<"bitrate", number>;
 
-  /**
+/**
  * Returned when a channel's permission overwrites is changed
 	 */
-export type APIAuditLogChangeKeyPermissionOverwrites = AuditLogChangeData<'permission_overwrites', APIOverwrite[]>;
+export type APIAuditLogChangeKeyPermissionOverwrites = AuditLogChangeData<
+  "permission_overwrites",
+  APIOverwrite[]
+>;
 
-  /**
+/**
  * Returned when a channel's NSFW restriction is changed
 	 */
-export type APIAuditLogChangeKeyNSFW = AuditLogChangeData<'nsfw', boolean>;
+export type APIAuditLogChangeKeyNSFW = AuditLogChangeData<"nsfw", boolean>;
 
-  /**
+/**
  * The application ID of the added or removed Webhook or Bot
 	 */
-export type APIAuditLogChangeKeyApplicationID = AuditLogChangeData<'application_id', string>;
+export type APIAuditLogChangeKeyApplicationID = AuditLogChangeData<
+  "application_id",
+  string
+>;
 
-  /**
+/**
  * Returned when a channel's amount of seconds a user has to wait before sending another message
  * is changed
 	 */
-export type APIAuditLogChangeKeyRateLimitPerUser = AuditLogChangeData<'rate_limit_per_user', number>;
+export type APIAuditLogChangeKeyRateLimitPerUser = AuditLogChangeData<
+  "rate_limit_per_user",
+  number
+>;
 
-  /**
+/**
  * Returned when a permission bitfield is changed
  * @deprecated Use `permissions_new` instead
 	 */
-export type APIAuditLogChangeKeyPermissions = AuditLogChangeData<'permissions', number>;
+export type APIAuditLogChangeKeyPermissions = AuditLogChangeData<
+  "permissions",
+  number
+>;
 
-  /**
+/**
  * Returned when a permission bitfield is changed
 	 */
-export type APIAuditLogChangeKeyPermissionsNew = AuditLogChangeData<'permissions_new', string>;
+export type APIAuditLogChangeKeyPermissionsNew = AuditLogChangeData<
+  "permissions_new",
+  string
+>;
 
-  /**
+/**
  * Returned when a role's color is changed
 	 */
-export type APIAuditLogChangeKeyColor = AuditLogChangeData<'color', number>;
+export type APIAuditLogChangeKeyColor = AuditLogChangeData<"color", number>;
 
-  /**
+/**
  * Returned when a role's hoist status is changed
 	 */
-export type APIAuditLogChangeKeyHoist = AuditLogChangeData<'hoist', boolean>;
+export type APIAuditLogChangeKeyHoist = AuditLogChangeData<"hoist", boolean>;
 
-  /**
+/**
  * Returned when a role's mentionable status is changed
 	 */
-export type APIAuditLogChangeKeyMentionable = AuditLogChangeData<'mentionable', boolean>;
+export type APIAuditLogChangeKeyMentionable = AuditLogChangeData<
+  "mentionable",
+  boolean
+>;
 
-  /**
+/**
  * Returned when an overwrite's allowed permissions bitfield is changed
 	 * @deprecated Use `allow_new` instead
 	 */
-export type APIAuditLogChangeKeyAllow = AuditLogChangeData<'allow', number>;
+export type APIAuditLogChangeKeyAllow = AuditLogChangeData<"allow", number>;
 
-  /**
+/**
  * Returned when an overwrite's allowed permissions bitfield is changed
 	 */
-export type APIAuditLogChangeKeyAllowNew = AuditLogChangeData<'allow_new', string>;
+export type APIAuditLogChangeKeyAllowNew = AuditLogChangeData<
+  "allow_new",
+  string
+>;
 
-  /**
+/**
  * Returned when an overwrite's denied permissions bitfield is changed
 	 * @deprecated Use `deny_new` instead
 	 */
-export type APIAuditLogChangeKeyDeny = AuditLogChangeData<'deny', number>;
+export type APIAuditLogChangeKeyDeny = AuditLogChangeData<"deny", number>;
 
-  /**
+/**
  * Returned when an overwrite's denied permissions bitfield is changed
 	 */
-export type APIAuditLogChangeKeyDenyNew = AuditLogChangeData<'deny_new', string>;
+export type APIAuditLogChangeKeyDenyNew = AuditLogChangeData<
+  "deny_new",
+  string
+>;
 
-  /**
+/**
  * Returned when an invite's code is changed
 	 */
-export type APIAuditLogChangeKeyCode = AuditLogChangeData<'code', string>;
+export type APIAuditLogChangeKeyCode = AuditLogChangeData<"code", string>;
 
-  /**
+/**
  * Returned when an invite's channel_id is changed
 	 */
-export type APIAuditLogChangeKeyChannelID = AuditLogChangeData<'channel_id', string>;
+export type APIAuditLogChangeKeyChannelID = AuditLogChangeData<
+  "channel_id",
+  string
+>;
 
 /**
  * Returned when an invite's inviter_id is changed
  */
-export type APIAuditLogChangeKeyInviterID = AuditLogChangeData<'inviter_id', string>;
+export type APIAuditLogChangeKeyInviterID = AuditLogChangeData<
+  "inviter_id",
+  string
+>;
 
-  /**
+/**
  * Returned when an invite's max_uses is changed
 	 */
-export type APIAuditLogChangeKeyMaxUses = AuditLogChangeData<'max_uses', number>;
+export type APIAuditLogChangeKeyMaxUses = AuditLogChangeData<
+  "max_uses",
+  number
+>;
 
-  /**
+/**
  * Returned when an invite's uses is changed
 	 */
-export type APIAuditLogChangeKeyUses = AuditLogChangeData<'uses', number>;
+export type APIAuditLogChangeKeyUses = AuditLogChangeData<"uses", number>;
 
-  /**
+/**
  * Returned when an invite's max_age is changed
 	 */
-export type APIAuditLogChangeKeyMaxAge = AuditLogChangeData<'max_age', number>;
+export type APIAuditLogChangeKeyMaxAge = AuditLogChangeData<"max_age", number>;
 
-  /**
+/**
  * Returned when an invite's temporary status is changed
 	 */
-export type APIAuditLogChangeKeyTemporary = AuditLogChangeData<'temporary', boolean>;
+export type APIAuditLogChangeKeyTemporary = AuditLogChangeData<
+  "temporary",
+  boolean
+>;
 
-  /**
+/**
  * Returned when a user's deaf status is changed
 	 */
-export type APIAuditLogChangeKeyDeaf = AuditLogChangeData<'deaf', boolean>;
+export type APIAuditLogChangeKeyDeaf = AuditLogChangeData<"deaf", boolean>;
 
-  /**
+/**
  * Returned when a user's mute status is changed
 	 */
-export type APIAuditLogChangeKeyMute = AuditLogChangeData<'mute', boolean>;
+export type APIAuditLogChangeKeyMute = AuditLogChangeData<"mute", boolean>;
 
-  /**
+/**
  * Returned when a user's nick is changed
 	 */
-export type APIAuditLogChangeKeyNick = AuditLogChangeData<'mute', boolean>;
+export type APIAuditLogChangeKeyNick = AuditLogChangeData<"mute", boolean>;
 
-  /**
+/**
  * Returned when a user's avatar_hash is changed
 	 */
-export type APIAuditLogChangeKeyAvatarHash = AuditLogChangeData<'avatar_hash', string>;
+export type APIAuditLogChangeKeyAvatarHash = AuditLogChangeData<
+  "avatar_hash",
+  string
+>;
 
-  /**
+/**
  * The ID of the changed entity - sometimes used in conjunction with other keys
 	 */
 export interface APIAuditLogChangeKeyID {
-	key: 'id';
-	new_value: string;
-	old_value?: string;
+  key: "id";
+  new_value: string;
+  old_value?: string;
 }
 
-  /**
+/**
  * The type of entity created
 	 */
-export type APIAuditLogChangeKeyType = AuditLogChangeData<'type', ChannelType | string>;
+export type APIAuditLogChangeKeyType = AuditLogChangeData<
+  "type",
+  ChannelType | string
+>;
 
-  /**
+/**
  * Returned when an integration's enable_emoticons is changed
 	 */
-export type APIAuditLogChangeKeyEnableEmoticons = AuditLogChangeData<'enable_emoticons', boolean>;
+export type APIAuditLogChangeKeyEnableEmoticons = AuditLogChangeData<
+  "enable_emoticons",
+  boolean
+>;
 
-  /**
+/**
  * Returned when an integration's expire_behavior is changed
 	 */
-export type APIAuditLogChangeKeyExpireBehavior = AuditLogChangeData<'expire_behavior', IntegrationExpireBehavior>;
+export type APIAuditLogChangeKeyExpireBehavior = AuditLogChangeData<
+  "expire_behavior",
+  IntegrationExpireBehavior
+>;
 
-  /**
+/**
  * Returned when an integration's expire_grace_period is changed
 	 */
-export type APIAuditLogChangeKeyExpireGracePeriod = AuditLogChangeData<'expire_grace_period', number>;
+export type APIAuditLogChangeKeyExpireGracePeriod = AuditLogChangeData<
+  "expire_grace_period",
+  number
+>;
 
-  /**
+/**
  * @internal
 	 */
 interface AuditLogChangeData<K extends string, D extends unknown> {
-	key: K;
-	new_value?: D;
-	old_value?: D;
+  key: K;
+  new_value?: D;
+  old_value?: D;
 }

@@ -14,13 +14,13 @@ You can `import` the default version directly, which will give you the latest ty
 > We **strongly recommend** you use a version when importing this module! This will prevent breaking changes when updating the module.
 
 ```ts
-import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/default/index.ts';
+import { APIUser } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/default/index.ts';
 ```
 
 You should instead consider adding the API version you want to target by appending `/v*`, where the `*` represents the API version.
 
 ```ts
-import { APIUserData } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v6/index.ts';
+import { APIUser } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v6/index.ts';
 ```
 
 
@@ -37,6 +37,8 @@ The exports of each API version is split into three main parts:
   - For endpoint options, they will follow the following structure: `REST<HTTP Method><Type><Query|(JSON|FormData)Body|Result>` where the type represents what it will return.
 
     - For example, `RESTPostAPIChannelMessageJSONBody` or `RESTGetAPIGatewayBotInfoResult`.
+
+    - Some exported types (specifically OAuth2 related ones) may not respect this entire structure due to the nature of the fields. They will start with either `RESTOAuth2` or with something similar to `REST<HTTP Method>OAuth2`
 
   - If a type ends with `Result`, then it represents the expected result by calling its accompanying route.
 

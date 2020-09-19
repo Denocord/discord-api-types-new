@@ -5,8 +5,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    #branches:
-      #- upstream-work
+    branches:
+      - upstream-work
 
 jobs:
   repo_sync:

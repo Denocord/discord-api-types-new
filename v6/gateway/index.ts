@@ -615,7 +615,7 @@ export interface GatewayHeartbeat {
 export interface GatewayIdentifyProperties {
   $os: string;
   $browser: string;
-	$device: string;
+  $device: string;
 }
 
 /**

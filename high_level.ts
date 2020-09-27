@@ -90,4 +90,12 @@ export interface MessageCreatePayload
   extends lowLevel.RESTPostAPIChannelMessageJSONBody {
   files?: File[];
 }
+
+export interface WebhookExecutePayload
+  extends
+    lowLevel.RESTPostAPIWebhookWithTokenJSONBody,
+    lowLevel.RESTPostAPIWebhookWithTokenQuery {
+  files?: File[];
+}
+
 export * from "./v6/index.ts";

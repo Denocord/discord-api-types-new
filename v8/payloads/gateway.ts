@@ -58,7 +58,7 @@ export type GatewayPresenceClientStatus = Partial<
 >;
 
 /**
- * https://discord.com/developers/docs/topics/gateway#activity-object
+ * https://discord.com/developers/docs/topics/gateway#activity-object-activity-structure
  */
 export interface GatewayActivity {
   name: string;

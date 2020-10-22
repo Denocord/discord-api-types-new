@@ -606,7 +606,7 @@ export type GatewayWebhooksUpdateDispatch = DataPayload<
  */
 export interface GatewayHeartbeat {
   op: GatewayOPCodes.Heartbeat;
-  d: number;
+  d: number | null;
 }
 
 /**
@@ -630,7 +630,7 @@ export interface GatewayIdentify {
     large_threshold?: number;
     // eslint-disable-next-line prettier/prettier
     shard?: [shard_id: number, shard_count: number];
-    presence?: RawGatewayPresenceUpdate;
+    presence?: GatewayPresenceUpdateData;
     guild_subscriptions?: boolean;
     intents: number;
   };
@@ -689,10 +689,18 @@ export interface GatewayUpdatePresence {
  */
 export interface GatewayPresenceUpdateData {
   since: number | null;
-  activities: GatewayActivity[] | null;
+  activities: GatewayActivityUpdateData[] | null;
   status: PresenceUpdateStatus;
   afk: boolean;
 }
+
+/**
+ * https://discord.com/developers/docs/topics/gateway#activity-object-activity-structure
+ */
+export type GatewayActivityUpdateData = Pick<
+  GatewayActivity,
+  "name" | "type" | "url"
+>;
 
 // #endregion Sendable Payloads
 

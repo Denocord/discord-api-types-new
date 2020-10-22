@@ -4,7 +4,7 @@
 
 import type { APIChannel } from "./channel.ts";
 import type { APIEmoji } from "./emoji.ts";
-import type { GatewayPresenceUpdate } from "./gateway.ts";
+import type { GatewayPresenceUpdate, PresenceUpdateStatus } from "./gateway.ts";
 import type { APIRole } from "./permissions.ts";
 import type { APIUser } from "./user.ts";
 import type { GatewayVoiceState } from "./voice.ts";
@@ -207,7 +207,8 @@ export interface APIGuildWidgetMember {
   username: string;
   discriminator: string;
   avatar: string | null;
-  status: string;
+  status: PresenceUpdateStatus;
+  activity?: { name: string };
   avatar_url: string;
 }
 

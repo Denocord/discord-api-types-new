@@ -98,4 +98,8 @@ export interface WebhookExecutePayload
   files?: File[];
 }
 
+export interface PruneOptions {
+  days?: number;
+  include_roles?: string[];
+}
 export * from "./v8/index.ts";

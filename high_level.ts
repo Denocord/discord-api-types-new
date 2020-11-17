@@ -14,6 +14,8 @@ export enum DataTypes {
   MESSAGE,
   WEBHOOK,
   INVITE,
+  EMOJI,
+  INTEGRATION, // TODO when integration actions come to Denocord
   UNKNOWN,
 }
 
@@ -32,6 +34,7 @@ type GuildVoiceState = PickOptionalType<
 
 export type Guild = HighLevelWrap<lowLevel.APIGuild, {
   roles: Map<string, Role>;
+  emojis: Emoji[];
   voice_states?: Map<string, GuildVoiceState>;
   members?: Map<string, GuildMember>;
   channels?: Map<string, Channel>;
@@ -102,4 +105,9 @@ export interface PruneOptions {
   days?: number;
   include_roles?: string[];
 }
+
+export interface Emoji extends lowLevel.APIEmoji {
+  [DATA_SYMBOL]: DataTypes.EMOJI;
+}
+
 export * from "./v8/index.ts";

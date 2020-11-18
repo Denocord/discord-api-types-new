@@ -20,7 +20,7 @@ import { APIUser } from 'https://raw.githubusercontent.com/Denocord/discord-api-
 You should instead consider adding the API version you want to target by appending `/v*`, where the `*` represents the API version.
 
 ```ts
-import { APIUser } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v6/index.ts';
+import { APIUser } from 'https://raw.githubusercontent.com/Denocord/discord-api-types/master/v8/index.ts';
 ```
 
 

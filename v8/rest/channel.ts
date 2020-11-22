@@ -31,6 +31,7 @@ export interface APIAllowedMentionsSend {
   parse?: AllowedMentionsTypes[];
   roles?: string[];
   users?: string[];
+  replied_user?: boolean;
 }
 
 // #endregion TypeDefs
@@ -66,6 +67,10 @@ export interface RESTGetAPIChannelMessagesQuery {
 
 export type RESTGetAPIChannelMessagesResult = APIMessage[];
 
+export type APIMessageReferenceSend =
+  & APIMessageReference
+  & Required<Pick<APIMessageReference, "message_id">>;
+
 /**
  * https://discord.com/developers/docs/resources/channel#create-message
  */
@@ -75,9 +80,7 @@ export interface RESTPostAPIChannelMessageJSONBody {
   tts?: boolean;
   embed?: APIEmbed;
   allowed_mentions?: APIAllowedMentionsSend;
-  message_reference?:
-    & Required<Omit<APIMessageReference, "guild_id">>
-    & Pick<APIMessageReference, "guild_id">;
+  message_reference?: APIMessageReferenceSend;
 }
 
 /**
@@ -100,7 +103,7 @@ export type RESTPostAPIChannelMessageFormDataBody =
     tts?: boolean;
     embed?: APIEmbed;
     allowed_mentions?: APIAllowedMentionsSend;
-    message_reference?: APIMessageReference;
+    message_reference?: APIMessageReferenceSend;
     /**
 			 * The file contents
 			 */

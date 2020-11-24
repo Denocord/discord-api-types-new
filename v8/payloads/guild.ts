@@ -17,6 +17,9 @@ export interface APIUnavailableGuild {
   unavailable: boolean;
 }
 
+/**
+ * https://discord.com/developers/docs/resources/guild#guild-object-guild-structure
+ */
 export interface APIPartialGuild
   extends
     Omit<APIUnavailableGuild, "unavailable">,
@@ -32,7 +35,11 @@ export interface APIPartialGuild
   unavailable?: boolean;
 }
 
+/**
+ * https://discord.com/developers/docs/resources/guild#guild-object-guild-structure
+ */
 export interface APIGuild extends APIPartialGuild {
+  icon_hash?: string | null;
   discovery_splash: string | null;
   owner?: boolean;
   owner_id: string;

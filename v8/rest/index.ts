@@ -5,11 +5,13 @@ export * from "./gateway.ts";
 export * from "./guild.ts";
 export * from "./invite.ts";
 export * from "./oauth2.ts";
+export * from "./template.ts";
 export * from "./user.ts";
 export * from "./voice.ts";
 export * from "./webhook.ts";
 
 export const APIVersion = "8";
+
 export const Routes = {
   /**
 	 * Route for:
@@ -404,6 +406,34 @@ export const Routes = {
 	 */
   invite(code: string) {
     return `/invites/${code}`;
+  },
+
+  /**
+	 * Route for:
+	 * - GET `/guilds/templates/{template.code}`
+	 * - POST `/guilds/templates/{template.code}`
+	 */
+  template(code: string) {
+    return `/guilds/templates/${code}`;
+  },
+
+  /**
+	 * Route for:
+	 * - GET `/guilds/{guild.id}/templates`
+	 * - POST `/guilds/{guild.id}/templates`
+	 */
+  guildTemplates(guildID: string) {
+    return `/guilds/${guildID}/templates`;
+  },
+
+  /**
+	 * Route for:
+	 * - PUT `/guilds/{guild.id}/templates/{template.code}`
+	 * - PATCH `/guilds/{guild.id}/templates/{template.code}`
+	 * - DELETE `/guilds/{guild.id}/templates/{template.code}`
+	 */
+  guildTemplate(guildID: string, code: string) {
+    return `/guilds/${guildID}/templates/${code}`;
   },
 
   /**

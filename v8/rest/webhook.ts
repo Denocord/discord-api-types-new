@@ -119,3 +119,14 @@ export type RESTPostAPIWebhookWithTokenSlackQuery =
  */
 export type RESTPostAPIWebhookWithTokenGitHubQuery =
   RESTPostAPIWebhookWithTokenQuery;
+
+export type RESTPatchAPIWebhookWithTokenMessageJSONBody =
+  RESTPostAPIWebhookWithTokenJSONBody;
+
+export type RESTPatchAPIWebhookWithTokenMessageFormDataBody =
+  | {
+    payload_json: string;
+  }
+  | RESTPatchAPIWebhookWithTokenMessageJSONBody;
+
+export type RESTDeleteAPIWebhookWithTokenMessageResult = never;

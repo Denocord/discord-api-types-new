@@ -3,6 +3,7 @@ export * from "./channel.ts";
 export * from "./emoji.ts";
 export * from "./gateway.ts";
 export * from "./guild.ts";
+export * from "./interactions.ts";
 export * from "./invite.ts";
 export * from "./oauth2.ts";
 export * from "./template.ts";
@@ -11,7 +12,6 @@ export * from "./voice.ts";
 export * from "./webhook.ts";
 
 export const APIVersion = "8";
-
 export const Routes = {
   /**
 	 * Route for:
@@ -54,7 +54,7 @@ export const Routes = {
 	 * Route for:
 	 * - POST `/channels/{channel.id}/messages/{message.id}/crosspost`
 	 */
-  channelCrosspost(channelID: string, messageID: string) {
+  channelMessageCrosspost(channelID: string, messageID: string) {
     return `/channels/${channelID}/messages/${messageID}/crosspost`;
   },
 
@@ -95,11 +95,7 @@ export const Routes = {
 	 *
 	 * **Note**: You need to URL encode the emoji yourself.
 	 */
-  channelMessageSpecificReaction(
-    channelID: string,
-    messageID: string,
-    emoji: string,
-  ) {
+  channelMessageReaction(channelID: string, messageID: string, emoji: string) {
     return `/channels/${channelID}/messages/${messageID}/reactions/${emoji}`;
   },
 
@@ -108,7 +104,7 @@ export const Routes = {
 	 * - DELETE `/channels/{channel.id}/messages/{message.id}/reactions`
 	 */
   channelMessageAllReactions(channelID: string, messageID: string) {
-    return `/channels/${channelID}/messages/${messageID}`;
+    return `/channels/${channelID}/messages/${messageID}/reactions`;
   },
 
   /**
@@ -124,7 +120,7 @@ export const Routes = {
 	 * - PUT `/channels/{channel.id}/permissions/{overwrite.id}`
 	 * - DELETE `/channels/{channel.id}/permissions/{overwrite.id}`
 	 */
-  channelPermissions(channelID: string, overwriteID: string) {
+  channelPermission(channelID: string, overwriteID: string) {
     return `/channels/${channelID}/permissions/${overwriteID}`;
   },
 
@@ -133,7 +129,7 @@ export const Routes = {
 	 * - GET `/channels/{channel.id}/invites`
 	 * - POST `/channels/{channel.id}/invites`
 	 */
-  channelInvite(channelID: string) {
+  channelInvites(channelID: string) {
     return `/channels/${channelID}/invites`;
   },
 
@@ -379,7 +375,7 @@ export const Routes = {
 	 * Route for:
 	 * - GET `/guilds/{guild.id}/widget.json`
 	 */
-  guildWidget(guildID: string) {
+  guildWidgetJSON(guildID: string) {
     return `/guilds/${guildID}/widget.json`;
   },
 
@@ -441,6 +437,8 @@ export const Routes = {
 	 * - GET `/users/@me`
 	 * - GET `/users/{user.id}`
 	 * - PATCH `/users/@me`
+	 *
+	 * @param [userID='@me'] The user ID, defaulted to `@me`
 	 */
   user(userID = "@me") {
     return `/users/${userID}`;
@@ -488,10 +486,10 @@ export const Routes = {
 
   /**
 	 * Route for:
-	 * - POST `/channels/{channel.id}/webhooks`
 	 * - GET `/channels/{channel.id}/webhooks`
+	 * - POST `/channels/{channel.id}/webhooks`
 	 */
-  channelWebhook(channelID: string) {
+  channelWebhooks(channelID: string) {
     return `/channels/${channelID}/webhooks`;
   },
 
@@ -512,6 +510,8 @@ export const Routes = {
 	 * - DELETE `/webhooks/{webhook.id}`
 	 * - DELETE `/webhooks/{webhook.id}/{webhook.token}`
 	 * - POST `/webhooks/{webhook.id}/{webhook.token}`
+	 *
+	 * - POST   `/webhooks/{application.id}/{interaction.token}`
 	 */
   webhook(webhookID: string, webhookToken?: string) {
     const parts = ["", "webhooks", webhookID];
@@ -523,8 +523,29 @@ export const Routes = {
 
   /**
 	 * Route for:
-	 * - POST `/webhooks/{webhook.id}/{webhook.token}/slack`
+	 * - PATCH  `/webhooks/{webhook.id}/{webhook.token}/messages/@original`
+	 * - PATCH  `/webhooks/{webhook.id}/{webhook.token}/messages/{message.id}`
+	 * - DELETE `/webhooks/{webhook.id}/{webhook.token}/messages/@original`
+	 * - DELETE `/webhooks/{webhook.id}/{webhook.token}/messages/{message.id}`
+	 *
+	 * - PATCH  `/webhooks/{application.id}/{interaction.token}/messages/@original`
+	 * - PATCH  `/webhooks/{application.id}/{interaction.token}/messages/{message.id}`
+	 * - DELETE `/webhooks/{application.id}/{interaction.token}/messages/{message.id}`
+	 *
+	 * @param [messageID='@original'] The message ID to change, defaulted to `@original`
+	 */
+  webhookMessage(
+    webhookID: string,
+    webhookToken: string,
+    messageID = "@original",
+  ) {
+    return `/webhooks/${webhookID}/${webhookToken}/messages/${messageID}`;
+  },
+
+  /**
+	 * Route for:
 	 * - POST `/webhooks/{webhook.id}/{webhook.token}/github`
+	 * - POST `/webhooks/{webhook.id}/{webhook.token}/slack`
 	 */
   webhookPlatform(
     webhookID: string,
@@ -556,5 +577,51 @@ export const Routes = {
 	 */
   oauth2CurrentApplication() {
     return `/oauth2/applications/@me`;
+  },
+
+  /**
+	 * Route for:
+	 * - GET  `/applications/{application.id}/commands`
+	 * - POST `/applications/{application.id}/commands`
+	 */
+  applicationCommands(applicationID: string) {
+    return `/applications/${applicationID}/commands`;
+  },
+
+  /**
+	 * - PATCH  `/applications/{application.id}/commands/{command.id}`
+	 * - DELETE `/applications/{application.id}/commands/{command.id}`
+	 */
+  applicationCommand(applicationID: string, commandID: string) {
+    return `/applications/${applicationID}/commands/${commandID}`;
+  },
+
+  /**
+	 * Route for:
+	 * - GET  `/applications/{application.id}/guilds/{guild.id}/commands`
+	 * - POST `/applications/{application.id}/guilds/{guild.id}/commands`
+	 */
+  applicationGuildCommands(applicationID: string, guildID: string) {
+    return `/applications/${applicationID}/guilds/${guildID}/commands`;
+  },
+
+  /**
+	 * - PATCH  `/applications/{application.id}/guilds/{guild.id}/commands/{command.id}`
+	 * - DELETE `/applications/{application.id}/guilds/{guild.id}/commands/{command.id}`
+	 */
+  applicationGuildCommand(
+    applicationID: string,
+    guildID: string,
+    commandID: string,
+  ) {
+    return `/applications/${applicationID}/guilds/${guildID}/commands/${commandID}`;
+  },
+
+  /**
+	 * Route for:
+	 * - POST `/interactions/{interaction.id}/{interaction.token}/callback`
+	 */
+  interactionCallback(interactionID: string, interactionToken: string) {
+    return `/interactions/${interactionID}/${interactionToken}/callback`;
   },
 };

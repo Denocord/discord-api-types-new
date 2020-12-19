@@ -31,7 +31,7 @@ export interface APIAuditLog {
 export interface APIAuditLogEntry {
   target_id: string | null;
   changes?: APIAuditLogChange[];
-  user_id: string | null;
+  user_id: string;
   id: string;
   action_type: AuditLogEvent;
   options?: APIAuditLogOptions;
@@ -41,7 +41,7 @@ export interface APIAuditLogEntry {
 /**
  * https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-events
  */
-export enum AuditLogEvent {
+export const enum AuditLogEvent {
   GUILD_UPDATE = 1,
 
   CHANNEL_CREATE = 10,
@@ -154,7 +154,7 @@ export interface APIAuditLogOptions {
   role_name?: string;
 }
 
-export enum AuditLogOptionsType {
+export const enum AuditLogOptionsType {
   Role = "0",
   Member = "1",
 }

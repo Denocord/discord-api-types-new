@@ -61,31 +61,31 @@ export type GatewayPresenceClientStatus = Partial<
  * https://discord.com/developers/docs/topics/gateway#activity-object-activity-structure
  */
 export interface GatewayActivity {
-	id: string;
+  id: string;
   name: string;
   type: ActivityType;
   url?: string | null;
   created_at: number;
   timestamps?: GatewayActivityTimestamps;
-	sync_id?: string;
-	platform?: ActivityPlatform;
+  sync_id?: string;
+  platform?: ActivityPlatform;
   application_id?: string;
   details?: string | null;
   state?: string | null;
   emoji?: GatewayActivityEmoji;
-	session_id?: string;
+  session_id?: string;
   party?: GatewayActivityParty;
   assets?: GatewayActivityAssets;
   secrets?: GatewayActivitySecrets;
   instance?: boolean;
   flags?: ActivityFlags;
-	buttons?: string[] | GatewayActivityButton[];
+  buttons?: string[] | GatewayActivityButton[];
 }
 
 export enum ActivityPlatform {
-	Desktop = 'desktop',
-	Samsung = 'samsung',
-	Xbox = 'xbox',
+  Desktop = "desktop",
+  Samsung = "samsung",
+  Xbox = "xbox",
 }
 
 /**
@@ -151,6 +151,6 @@ export const enum ActivityFlags {
 }
 
 export interface GatewayActivityButton {
-	label: string;
-	url: string;
+  label: string;
+  url: string;
 }

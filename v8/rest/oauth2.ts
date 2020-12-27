@@ -7,7 +7,10 @@ import type {
 /**
  * https://discord.com/developers/docs/topics/oauth2#get-current-application-information
  */
-export type RESTGetAPIOauth2CurrentApplicationResult = Omit<APIApplication, 'flags'>;
+export type RESTGetAPIOauth2CurrentApplicationResult = Omit<
+  APIApplication,
+  "flags"
+>;
 
 /**
  * https://discord.com/developers/docs/topics/oauth2#authorization-code-grant
